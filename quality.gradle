@@ -3,10 +3,10 @@ jacoco {
 }
 
 jacocoTestReport {
+    dependsOn test
     reports {
         xml.enabled false
         html.enabled true
-        html.destination rootProject.file("${buildDir}/test-artifacts/${rootProject.name}/coverage")
     }
 }
 
@@ -21,3 +21,5 @@ jacocoTestCoverageVerification {
         }
     }
 }
+jacocoTestReport.finalizedBy jacocoTestCoverageVerification
+test.finalizedBy jacocoTestReport

@@ -20,10 +20,10 @@ repositories {
 }
 
 apply from: "$rootProject.projectDir/dependencies.gradle"
+apply from: "$rootProject.projectDir/quality.gradle"
 
 test {
 	useJUnitPlatform()
-	finalizedBy jacocoTestReport
 	testLogging {
 		exceptionFormat = 'full'
 		showStackTraces = true
