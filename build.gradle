@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.3.3.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
+	id 'jacoco'
 }
 
 group = 'com.spring_aws_infra_setup'
@@ -22,6 +23,7 @@ apply from: "$rootProject.projectDir/dependencies.gradle"
 
 test {
 	useJUnitPlatform()
+	finalizedBy jacocoTestReport
 	testLogging {
 		exceptionFormat = 'full'
 		showStackTraces = true
