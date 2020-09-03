@@ -22,4 +22,13 @@ apply from: "$rootProject.projectDir/dependencies.gradle"
 
 test {
 	useJUnitPlatform()
+	testLogging {
+		exceptionFormat = 'full'
+		showStackTraces = true
+		events "passed", "skipped", "failed", "standardError"
+	}
+}
+
+task localBuild(type: GradleBuild) {
+	tasks = ['clean', 'test']
 }
