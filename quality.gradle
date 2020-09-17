@@ -14,7 +14,9 @@ jacocoTestCoverageVerification {
     violationRules {
         rule {
             element = 'CLASS'
-            excludes = []
+            excludes = [
+                    "com.spring_aws_infra_setup.spring_aws_infra_setup.SpringAwsInfraSetupApplication"
+            ]
             limit {
                 minimum = 0.96
             }
